@@ -48,9 +48,24 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }()
     
     private func setupMenuBar() {
+        // Hide menubar upon scroll
+        navigationController?.hidesBarsOnSwipe = true
+        
+        // Create a view that is colored and hides the issue when scrolling
+        let hideView = UIView()
+        hideView.backgroundColor = UIColor.rgb(red: 48, green: 120, blue: 49, alpha: 1)
+        view.addSubview(hideView)
+        view.addConstraintsWithFormat(format: "H:|[v0]|", views: hideView)
+        view.addConstraintsWithFormat(format: "V:[v0(50)]", views: hideView)
+        
+        // Add menuBar
         view.addSubview(menuBar)
         view.addConstraintsWithFormat(format: "H:|[v0]|", views: menuBar)
-        view.addConstraintsWithFormat(format: "V:|[v0(50)]", views: menuBar)
+        view.addConstraintsWithFormat(format: "V:[v0(50)]", views: menuBar)
+        
+        // Constraints the scroll view to the top of the menuBar
+        menuBar.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
+        
     }
     
 //# MARK: - UICollectionView

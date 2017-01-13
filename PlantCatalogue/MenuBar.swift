@@ -13,7 +13,8 @@ class MenuBar: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = UIColor.yellow
+        backgroundColor = UIColor.rgb(red: 48, green: 120, blue: 49, alpha: 1)
+
     }
     
     required init?(coder aDecoder: NSCoder) {
