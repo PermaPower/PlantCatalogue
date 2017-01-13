@@ -1,0 +1,76 @@
+//
+//  ViewController.swift
+//  PlantCatalogue
+//
+//  Created by Mac on 12/1/17.
+//  Copyright © 2017 Mac. All rights reserved.
+//
+
+import UIKit
+
+class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Set background image at layer 0
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "greenbackground.jpg")
+        backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
+        backgroundImage.clipsToBounds = true
+        self.view.insertSubview(backgroundImage, at: 0)
+        
+        // Set title of navigation bar title
+        navigationItem.title = "Home"
+        
+        // Set title bar color
+        navigationController?.navigationBar.barTintColor = UIColor.rgb(red: 48, green: 120, blue: 49, alpha: 1)
+        
+         // Register collectionView cellID
+        collectionView?.register(PlantCell.self, forCellWithReuseIdentifier: "cellID")
+        
+        // Collection cell background cell color
+        collectionView?.backgroundColor = UIColor.clear
+
+        
+    }
+    
+//# MARK: - UICollectionView
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        // Return number of cells in collection view
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        // Change background cell color with a alpha tint
+        view.backgroundColor = UIColor.rgb(red: 58, green: 153, blue: 68, alpha: 0.5)
+        // Setup the size of each collectionView cell
+        return CGSize(width: view.frame.width, height: 200)
+    
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        // Set minimum line spacing between collectionView cells
+        return 0
+    }
+   
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        // Associate cell with cellID
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath)
+        
+        return cell
+    }
+    
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
+}
