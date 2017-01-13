@@ -16,8 +16,6 @@ class ActivityMonth: UIView {
     backgroundColor = UIColor.red
         
         
-        
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

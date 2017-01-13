@@ -15,15 +15,20 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         
         // Set background image at layer 0
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "greenbackground.jpg")
-        backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
-        backgroundImage.clipsToBounds = true
-        self.view.insertSubview(backgroundImage, at: 0)
+       backgroundImage.image = UIImage(named: "greenbackground.jpg")
+       backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
+       backgroundImage.clipsToBounds = true
+       view.insertSubview(backgroundImage, at: 0)
         
         // Set title of navigation bar title
         navigationItem.title = "Home"
         
+        // Setup menu bar
+        setupMenuBar()
+        
         // Set title bar color
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = UIColor.rgb(red: 48, green: 120, blue: 49, alpha: 1)
         
          // Register collectionView cellID
@@ -31,8 +36,20 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         
         // Collection cell background cell color
         collectionView?.backgroundColor = UIColor.clear
-
         
+        // Push collection View down 100 pixels
+        collectionView?.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
+    }
+    
+    let menuBar: MenuBar = {
+        let mb = MenuBar()
+        return mb
+    }()
+    
+    private func setupMenuBar() {
+        view.addSubview(menuBar)
+        view.addConstraintsWithFormat(format: "H:|[v0]|", views: menuBar)
+        view.addConstraintsWithFormat(format: "V:|[v0(50)]", views: menuBar)
     }
     
 //# MARK: - UICollectionView
@@ -57,7 +74,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         // Set minimum line spacing between collectionView cells
         return 0
     }
-   
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         // Associate cell with cellID

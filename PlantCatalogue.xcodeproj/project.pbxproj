@@ -12,9 +12,10 @@
 		0416DDE61E26F1EA000BDA76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0416DDE41E26F1EA000BDA76 /* Main.storyboard */; };
 		0416DDE81E26F1EA000BDA76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0416DDE71E26F1EA000BDA76 /* Assets.xcassets */; };
 		0416DDEB1E26F1EA000BDA76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0416DDE91E26F1EA000BDA76 /* LaunchScreen.storyboard */; };
+		046A7D9E1E28796D00435314 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A7D9D1E28796D00435314 /* MenuBar.swift */; };
 		048BB9D41E274F70008A4F78 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BB9D31E274F70008A4F78 /* Extensions.swift */; };
 		04F72D2C1E283EBD00600CCC /* PlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F72D2B1E283EBD00600CCC /* PlantView.swift */; };
-		04F72D2F1E284A9C00600CCC /* ActivityMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F72D2E1E284A9C00600CCC /* ActivityMonth.swift */; };
+		04F72D2F1E284A9C00600CCC /* ActivityMonthButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F72D2E1E284A9C00600CCC /* ActivityMonthButtons.swift */; };
 		04F72D321E2858B400600CCC /* ActivityMonthCalendarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F72D311E2858B400600CCC /* ActivityMonthCalendarIcon.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,9 +27,10 @@
 		0416DDE71E26F1EA000BDA76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0416DDEA1E26F1EA000BDA76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0416DDEC1E26F1EA000BDA76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		046A7D9D1E28796D00435314 /* MenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		048BB9D31E274F70008A4F78 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		04F72D2B1E283EBD00600CCC /* PlantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantView.swift; sourceTree = "<group>"; };
-		04F72D2E1E284A9C00600CCC /* ActivityMonth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityMonth.swift; sourceTree = "<group>"; };
+		04F72D2E1E284A9C00600CCC /* ActivityMonthButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityMonthButtons.swift; sourceTree = "<group>"; };
 		04F72D311E2858B400600CCC /* ActivityMonthCalendarIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityMonthCalendarIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				04F72D2B1E283EBD00600CCC /* PlantView.swift */,
+				046A7D9D1E28796D00435314 /* MenuBar.swift */,
 				04F72D301E2856D800600CCC /* SubViews */,
 			);
 			name = View;
@@ -102,7 +105,7 @@
 		04F72D301E2856D800600CCC /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				04F72D2E1E284A9C00600CCC /* ActivityMonth.swift */,
+				04F72D2E1E284A9C00600CCC /* ActivityMonthButtons.swift */,
 				04F72D311E2858B400600CCC /* ActivityMonthCalendarIcon.swift */,
 			);
 			name = SubViews;
@@ -184,7 +187,8 @@
 				0416DDE31E26F1EA000BDA76 /* HomeViewController.swift in Sources */,
 				048BB9D41E274F70008A4F78 /* Extensions.swift in Sources */,
 				04F72D321E2858B400600CCC /* ActivityMonthCalendarIcon.swift in Sources */,
-				04F72D2F1E284A9C00600CCC /* ActivityMonth.swift in Sources */,
+				04F72D2F1E284A9C00600CCC /* ActivityMonthButtons.swift in Sources */,
+				046A7D9E1E28796D00435314 /* MenuBar.swift in Sources */,
 				0416DDE11E26F1EA000BDA76 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
