@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Status bar tint coloring
         let statusBarBackgroundView = UIView()
-        statusBarBackgroundView.backgroundColor = UIColor.rgb(red: 48, green: 120, blue: 49, alpha: 1)
+        statusBarBackgroundView.backgroundColor = UIColor.rgb(red: 48, green: 100, blue: 49, alpha: 1)
         
         window?.addSubview(statusBarBackgroundView)
         window?.addConstraintsWithFormat(format: "H:|[v0]|", views: statusBarBackgroundView)

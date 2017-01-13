@@ -37,8 +37,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         // Collection cell background cell color
         collectionView?.backgroundColor = UIColor.clear
         
-        // Push collection View down 100 pixels
+        // Push collection View down 50 pixels (size of menuBar)
         collectionView?.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
+        collectionView?.scrollIndicatorInsets = UIEdgeInsetsMake(50, 0, 0, 0)
     }
     
     let menuBar: MenuBar = {
