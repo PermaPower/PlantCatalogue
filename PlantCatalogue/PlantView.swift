@@ -22,7 +22,7 @@ class PlantCell: UICollectionViewCell {
     // Activity Month Background View
     let activityMonthView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.rgb(red: 42, green: 83, blue: 31, alpha: 0.8)
+        view.backgroundColor = UIColor.rgb(red: 42, green: 83, blue: 31, alpha: 0.2)
         return view
     }()
     
