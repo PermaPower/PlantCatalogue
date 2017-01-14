@@ -8,30 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		0416DDE11E26F1EA000BDA76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416DDE01E26F1EA000BDA76 /* AppDelegate.swift */; };
-		0416DDE31E26F1EA000BDA76 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416DDE21E26F1EA000BDA76 /* HomeViewController.swift */; };
+		0416DDE31E26F1EA000BDA76 /* PlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416DDE21E26F1EA000BDA76 /* PlantViewController.swift */; };
 		0416DDE61E26F1EA000BDA76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0416DDE41E26F1EA000BDA76 /* Main.storyboard */; };
 		0416DDE81E26F1EA000BDA76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0416DDE71E26F1EA000BDA76 /* Assets.xcassets */; };
 		0416DDEB1E26F1EA000BDA76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0416DDE91E26F1EA000BDA76 /* LaunchScreen.storyboard */; };
 		046A7D9E1E28796D00435314 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A7D9D1E28796D00435314 /* MenuBar.swift */; };
 		048BB9D41E274F70008A4F78 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BB9D31E274F70008A4F78 /* Extensions.swift */; };
+		04A4DE9B1E29EA1800A2FBAC /* CalendarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4DE9A1E29EA1800A2FBAC /* CalendarButton.swift */; };
 		04F72D2C1E283EBD00600CCC /* PlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F72D2B1E283EBD00600CCC /* PlantView.swift */; };
-		04F72D2F1E284A9C00600CCC /* ActivityMonthButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F72D2E1E284A9C00600CCC /* ActivityMonthButtons.swift */; };
-		04F72D321E2858B400600CCC /* ActivityMonthCalendarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F72D311E2858B400600CCC /* ActivityMonthCalendarIcon.swift */; };
+		04F72D2F1E284A9C00600CCC /* ActivityMonthCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F72D2E1E284A9C00600CCC /* ActivityMonthCollectionView.swift */; };
+		04F72D321E2858B400600CCC /* CalendarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F72D311E2858B400600CCC /* CalendarIcon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0416DDDD1E26F1EA000BDA76 /* PlantCatalogue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantCatalogue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0416DDE01E26F1EA000BDA76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0416DDE21E26F1EA000BDA76 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0416DDE21E26F1EA000BDA76 /* PlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantViewController.swift; sourceTree = "<group>"; };
 		0416DDE51E26F1EA000BDA76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0416DDE71E26F1EA000BDA76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0416DDEA1E26F1EA000BDA76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0416DDEC1E26F1EA000BDA76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		046A7D9D1E28796D00435314 /* MenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		048BB9D31E274F70008A4F78 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		04A4DE9A1E29EA1800A2FBAC /* CalendarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarButton.swift; sourceTree = "<group>"; };
 		04F72D2B1E283EBD00600CCC /* PlantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantView.swift; sourceTree = "<group>"; };
-		04F72D2E1E284A9C00600CCC /* ActivityMonthButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityMonthButtons.swift; sourceTree = "<group>"; };
-		04F72D311E2858B400600CCC /* ActivityMonthCalendarIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityMonthCalendarIcon.swift; sourceTree = "<group>"; };
+		04F72D2E1E284A9C00600CCC /* ActivityMonthCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityMonthCollectionView.swift; sourceTree = "<group>"; };
+		04F72D311E2858B400600CCC /* CalendarIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +91,7 @@
 			children = (
 				04F72D2B1E283EBD00600CCC /* PlantView.swift */,
 				046A7D9D1E28796D00435314 /* MenuBar.swift */,
-				04F72D301E2856D800600CCC /* SubViews */,
+				04F72D301E2856D800600CCC /* ActivityMonth */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -97,18 +99,19 @@
 		04F72D2D1E283EFF00600CCC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0416DDE21E26F1EA000BDA76 /* HomeViewController.swift */,
+				0416DDE21E26F1EA000BDA76 /* PlantViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		04F72D301E2856D800600CCC /* SubViews */ = {
+		04F72D301E2856D800600CCC /* ActivityMonth */ = {
 			isa = PBXGroup;
 			children = (
-				04F72D2E1E284A9C00600CCC /* ActivityMonthButtons.swift */,
-				04F72D311E2858B400600CCC /* ActivityMonthCalendarIcon.swift */,
+				04F72D2E1E284A9C00600CCC /* ActivityMonthCollectionView.swift */,
+				04F72D311E2858B400600CCC /* CalendarIcon.swift */,
+				04A4DE9A1E29EA1800A2FBAC /* CalendarButton.swift */,
 			);
-			name = SubViews;
+			name = ActivityMonth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,10 +187,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				04F72D2C1E283EBD00600CCC /* PlantView.swift in Sources */,
-				0416DDE31E26F1EA000BDA76 /* HomeViewController.swift in Sources */,
+				0416DDE31E26F1EA000BDA76 /* PlantViewController.swift in Sources */,
 				048BB9D41E274F70008A4F78 /* Extensions.swift in Sources */,
-				04F72D321E2858B400600CCC /* ActivityMonthCalendarIcon.swift in Sources */,
-				04F72D2F1E284A9C00600CCC /* ActivityMonthButtons.swift in Sources */,
+				04F72D321E2858B400600CCC /* CalendarIcon.swift in Sources */,
+				04F72D2F1E284A9C00600CCC /* ActivityMonthCollectionView.swift in Sources */,
+				04A4DE9B1E29EA1800A2FBAC /* CalendarButton.swift in Sources */,
 				046A7D9E1E28796D00435314 /* MenuBar.swift in Sources */,
 				0416DDE11E26F1EA000BDA76 /* AppDelegate.swift in Sources */,
 			);

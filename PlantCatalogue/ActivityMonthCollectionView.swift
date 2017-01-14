@@ -35,6 +35,12 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         addConstraintsWithFormat(format: "H:|[v0]|", views: collectionView)
         addConstraintsWithFormat(format: "V:|[v0]|", views: collectionView)
         
+//# MARK: - UP TO
+        
+        // This preselects first item in collectionView
+        let selectedIndexPath = NSIndexPath(item: 0, section: 0)
+        collectionView.selectItem(at: selectedIndexPath as IndexPath, animated: false, scrollPosition: .centeredHorizontally)
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -44,6 +50,9 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
     @available(iOS 6.0, *)
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! CalendarButton
+        
+        //Enable gestureRecogniser for multitouch
+        
         
         cell.calButton.image = UIImage(named: "cal.jpg")?.withRenderingMode(.alwaysTemplate)
         cell.tintColor = UIColor.rgb(red: 10, green: 120, blue: 10, alpha: 0.8)
@@ -70,8 +79,6 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         return CGSize(width: widthPerItem, height: (frame.height / 2) - 2.5)
     }
     
-    
-    
     // Reduce minimum line spacing between collectionview cells to zero
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 5
@@ -84,44 +91,3 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-
-
-
-
-
-class CalendarButton: BaseCell {
-    
-    let calButton: UIImageView = {
-        let cb = UIImageView()
-        cb.image = UIImage(named: "cal.jpg")?.withRenderingMode(.alwaysTemplate)
-        cb.tintColor = UIColor.rgb(red: 10, green: 120, blue: 10, alpha: 0.8)
-        return cb
-    }()
-    
-    override var isHighlighted: Bool {
-        didSet {
-            calButton.tintColor = isHighlighted ? UIColor.white : UIColor.rgb(red: 10, green: 120, blue: 10, alpha: 0.8)
-        }
-    }
-    
-    override var isSelected: Bool {
-        didSet {
-            calButton.tintColor = isSelected ? UIColor.white : UIColor.rgb(red: 10, green: 120, blue: 10, alpha: 0.8)
-        }
-    }
-
-    override func setupViews() {
-        super.setupViews()
-        
-        addSubview(calButton)
-        addConstraintsWithFormat(format: "H:|[v0]|", views: calButton)
-        addConstraintsWithFormat(format: "V:|[v0]|", views: calButton)
-        
-        //backgroundColor = UIColor.rgb(red: 58, green: 153, blue: 68, alpha: 0.8)
-    }
-   }
-
-
-
-
