@@ -8,16 +8,26 @@
 
 import UIKit
 
-//# MARK: - PlantCell class
-
-// Activity Month view Class
-class PlantCell: UICollectionViewCell {
-    
+// Superclass to initalise all base UICollectionView cells
+class BaseCell: UICollectionViewCell  {
     override init(frame: CGRect) {
         // When dequeueReusableCell is called this init method is called if it needs a new cell
         super.init(frame: frame)
         setupViews()
     }
+    
+    func setupViews() {
+        
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+//# MARK: - PlantCell class
+
+// Activity Month view Class (Type BaseCell - cleaner)
+class PlantCell: BaseCell {
     
     // Activity Month Background View
     let activityMonthView: UIView = {
@@ -45,7 +55,8 @@ class PlantCell: UICollectionViewCell {
         return view
     }()
     
-    func setupViews() {
+    // Overrided as it uses the baseCell superclass
+    override func setupViews() {
         
         // Add subviews
         addSubview(activityMonthView)
@@ -66,7 +77,5 @@ class PlantCell: UICollectionViewCell {
         addConstraintsWithFormat(format: "V:|-32-[v0(88)]", views: actMonth)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+   
 }

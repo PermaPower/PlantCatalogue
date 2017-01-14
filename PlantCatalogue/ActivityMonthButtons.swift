@@ -24,12 +24,12 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         return cv
     }()
     
-    let cellID = "cellID"
     
+    let cellID = "cellID"
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellID)
+        collectionView.register(CalendarButton.self, forCellWithReuseIdentifier: cellID)
         
         addSubview(collectionView)
         addConstraintsWithFormat(format: "H:|[v0]|", views: collectionView)
@@ -41,17 +41,18 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         return 12
     }
     
-    let imageIconMonth = ["cal.jpg", "cal.jpg"]
-    
     @available(iOS 6.0, *)
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! CalendarButton
         
-        cell.backgroundColor = UIColor.rgb(red: 58, green: 153, blue: 68, alpha: 0.8)
-        
-        // cell.backgroundView = UIImageView.init(image: (UIImage(named: "cal.jpg")), highlightedImage: UIImage(named: "cal.jpg"))
+        cell.calButton.image = UIImage(named: "cal.jpg")
         
         return cell
+    }
+    
+    // detect what collectionview was selected
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row + 1)
     }
     
     // Divide the collectionview by 6 x 2
@@ -82,3 +83,36 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+
+class CalendarButton: BaseCell {
+    
+    let calButton: UIImageView = {
+            let cb = UIImageView()
+            cb.image = UIImage(named: "cal.jpg")?.withRenderingMode(.alwaysOriginal)
+        cb.tintColor = UIColor.rgb(red: 91, green: 14, blue: 13, alpha: 0.8)
+        return cb
+    }()
+    
+    override var isSelected: Bool {
+        didSet {
+        }
+    }
+
+    
+    
+    
+    override func setupViews() {
+        super.setupViews()
+        
+        addSubview(calButton)
+        addConstraintsWithFormat(format: "H:|[v0]|", views: calButton)
+        addConstraintsWithFormat(format: "V:|[v0]|", views: calButton)
+        
+        //backgroundColor = UIColor.rgb(red: 58, green: 153, blue: 68, alpha: 0.8)
+    }
+   }
+
+
+
+
