@@ -45,14 +45,15 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! CalendarButton
         
-        cell.calButton.image = UIImage(named: "cal.jpg")
-        
+        cell.calButton.image = UIImage(named: "cal.jpg")?.withRenderingMode(.alwaysTemplate)
+        cell.tintColor = UIColor.rgb(red: 10, green: 120, blue: 10, alpha: 0.8)
         return cell
     }
     
     // detect what collectionview was selected
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row + 1)
+        
     }
     
     // Divide the collectionview by 6 x 2
@@ -85,23 +86,31 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
 }
 
 
+
+
+
+
 class CalendarButton: BaseCell {
     
     let calButton: UIImageView = {
-            let cb = UIImageView()
-            cb.image = UIImage(named: "cal.jpg")?.withRenderingMode(.alwaysOriginal)
-        cb.tintColor = UIColor.rgb(red: 91, green: 14, blue: 13, alpha: 0.8)
+        let cb = UIImageView()
+        cb.image = UIImage(named: "cal.jpg")?.withRenderingMode(.alwaysTemplate)
+        cb.tintColor = UIColor.rgb(red: 10, green: 120, blue: 10, alpha: 0.8)
         return cb
     }()
     
+    override var isHighlighted: Bool {
+        didSet {
+            calButton.tintColor = isHighlighted ? UIColor.white : UIColor.rgb(red: 10, green: 120, blue: 10, alpha: 0.8)
+        }
+    }
+    
     override var isSelected: Bool {
         didSet {
+            calButton.tintColor = isSelected ? UIColor.white : UIColor.rgb(red: 10, green: 120, blue: 10, alpha: 0.8)
         }
     }
 
-    
-    
-    
     override func setupViews() {
         super.setupViews()
         
