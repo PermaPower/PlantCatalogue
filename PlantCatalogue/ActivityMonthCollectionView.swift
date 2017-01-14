@@ -35,9 +35,7 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         addSubview(collectionView)
         addConstraintsWithFormat(format: "H:|[v0]|", views: collectionView)
         addConstraintsWithFormat(format: "V:|[v0]|", views: collectionView)
-        
-//# MARK: - UP TO
-        
+               
         // This preselects first item in collectionView
         // let selectedIndexPath = NSIndexPath(item: 0, section: 0)
         // collectionView.selectItem(at: selectedIndexPath as IndexPath, animated: false, scrollPosition: .centeredHorizontally)
@@ -65,6 +63,12 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         print(indexPath.row + 1)
         
     }
+    
+    // detect what collectionview was selected
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        print(indexPath.row + 1)
+    }
+    
     
     // Divide the collectionview by 6 x 2
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
