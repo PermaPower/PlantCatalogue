@@ -21,6 +21,7 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         cv.backgroundColor = UIColor.clear
         cv.dataSource = self
         cv.delegate = self
+        cv.allowsMultipleSelection = true
         return cv
     }()
     
@@ -38,8 +39,8 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
 //# MARK: - UP TO
         
         // This preselects first item in collectionView
-        let selectedIndexPath = NSIndexPath(item: 0, section: 0)
-        collectionView.selectItem(at: selectedIndexPath as IndexPath, animated: false, scrollPosition: .centeredHorizontally)
+        // let selectedIndexPath = NSIndexPath(item: 0, section: 0)
+        // collectionView.selectItem(at: selectedIndexPath as IndexPath, animated: false, scrollPosition: .centeredHorizontally)
         
     }
     
