@@ -15,12 +15,14 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
     
     // Create a collectionView for the buttons with multiselect enabled
     lazy var collectionView: UICollectionView = {
+        
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = UIColor.clear
         cv.dataSource = self
         cv.delegate = self
         cv.allowsMultipleSelection = true
+
         return cv
     }()
 
@@ -29,6 +31,7 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         super.init(frame: frame)
         
         collectionView.register(CalendarButton.self, forCellWithReuseIdentifier: cellID)
+        
         addSubview(collectionView)
         addConstraintsWithFormat(format: "H:|[v0]|", views: collectionView)
         addConstraintsWithFormat(format: "V:|[v0]|", views: collectionView)
@@ -42,8 +45,9 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! CalendarButton
         
-        cell.calDate.image = UIImage(named: "cal.jpg")?.withRenderingMode(.alwaysTemplate)
-        cell.tintColor = UIColor.rgb(red: 10, green: 120, blue: 10, alpha: 0.8)
+        //cell.calButton.image = UIImage(named: "cal.jpg")?.withRenderingMode(.alwaysTemplate)
+        //cell.tintColor = UIColor.rgb(red: 10, green: 120, blue: 10, alpha: 0.8)
+        
         return cell
     }
     
