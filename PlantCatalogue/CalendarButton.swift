@@ -29,38 +29,23 @@ class CalendarButton: BaseCell {
         addSubview(calButton)
         addConstraintsWithFormat(format: "H:|[v0]|", views: calButton)
         addConstraintsWithFormat(format: "V:[v0(10)]|", views: calButton)
-        
     }
-    
     
     override var isHighlighted: Bool {
         didSet {
-           //alpha = isHighlighted ? 0.2 : 0.8
             calButton.backgroundColor = isHighlighted ? UIColor.red: UIColor.clear
-
         }
     }
     
     override var isSelected: Bool {
         didSet {
-            
-            
-         // alpha = isSelected ? 0.2 : 0.8
             calButton.backgroundColor = isSelected ? UIColor.red: UIColor.clear
-
-
-
         }
     }
     
     override var isMultipleTouchEnabled: Bool {
         didSet {
-          //  alpha = isMultipleTouchEnabled ? 0.2 : 0.8
-            
             calButton.backgroundColor = isMultipleTouchEnabled ? UIColor.red: UIColor.clear
-
-
-
         }
     }
 }
