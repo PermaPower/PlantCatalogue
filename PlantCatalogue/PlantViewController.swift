@@ -65,7 +65,6 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         
         // Constraints the scroll view to the top of the menuBar
         menuBar.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
-        
     }
     
 //# MARK: - UICollectionView

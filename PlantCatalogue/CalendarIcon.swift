@@ -27,7 +27,6 @@ class ActivityMonthCal: UIView {
         addSubview(calendarView)
         addConstraintsWithFormat(format: "H:|-[v0]-|", views: calendarView)
         addConstraintsWithFormat(format: "V:|-[v0]-|", views: calendarView)
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

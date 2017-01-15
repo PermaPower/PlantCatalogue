@@ -8,23 +8,6 @@
 
 import UIKit
 
-// Superclass to initalise all base UICollectionView cells
-class BaseCell: UICollectionViewCell  {
-    override init(frame: CGRect) {
-        // When dequeueReusableCell is called this init method is called if it needs a new cell
-        super.init(frame: frame)
-        setupViews()
-    }
-    
-    func setupViews() {
-        
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
 //# MARK: - PlantCell class
 
 // Activity Month view Class (Type BaseCell - cleaner)
