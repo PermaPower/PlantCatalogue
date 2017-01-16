@@ -9,6 +9,8 @@
 import UIKit
 
 class CalendarButton: BaseCell {
+
+    
     
     let calButton: UIView = {
         
@@ -23,12 +25,12 @@ class CalendarButton: BaseCell {
         
     }()
     
-    let calButtonMonth: UIView = {
+    let calButtonMonth: UILabel = {
         
         let cbm = UILabel()
         
-        cbm.text = "Fun"
         cbm.textAlignment = .center
+        cbm.text = "Fun"
         cbm.textColor = UIColor.rgb(red: 0, green: 120, blue: 0, alpha: 0.8)
         cbm.sizeToFit()
         

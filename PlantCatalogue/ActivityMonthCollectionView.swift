@@ -9,11 +9,13 @@
 import UIKit
 
 class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+
 
     // Setup blank dictionary with a capacity of 0-11 (1-12 months) to track button presses
     var calButtonTrack = [Int:Bool](minimumCapacity: 11)
     
-    // Create a collectionView for the buttons with multiselect enabled
+    // Create a collectionVvar for the buttons with multiselect enabled
     lazy var collectionView: UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
@@ -38,6 +40,9 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         
    }
     
+    // Month names
+    let months: [String] = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 12
     }
@@ -46,9 +51,9 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! CalendarButton
         
-        //cell.calButton.image = UIImage(named: "cal.jpg")?.withRenderingMode(.alwaysTemplate)
-        //cell.tintColor = UIColor.rgb(red: 10, green: 120, blue: 10, alpha: 0.8)
-        
+        // As this function has been casted ast CalendarButton, I can access the UILabel
+        cell.calButtonMonth.text = months[indexPath.item]
+                
         return cell
     }
     
