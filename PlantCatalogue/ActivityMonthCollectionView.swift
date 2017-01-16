@@ -9,7 +9,7 @@
 import UIKit
 
 class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
+
     // Setup blank dictionary with a capacity of 0-11 (1-12 months) to track button presses
     var calButtonTrack = [Int:Bool](minimumCapacity: 11)
     
@@ -25,7 +25,7 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
 
         return cv
     }()
-
+    
     let cellID = "cellID"
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,7 +35,8 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         addSubview(collectionView)
         addConstraintsWithFormat(format: "H:|[v0]|", views: collectionView)
         addConstraintsWithFormat(format: "V:|[v0]|", views: collectionView)
-    }
+        
+   }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 12
@@ -85,3 +86,5 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+

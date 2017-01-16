@@ -23,12 +23,31 @@ class CalendarButton: BaseCell {
         
     }()
     
+    let calButtonMonth: UIView = {
+        
+        let cbm = UILabel()
+        
+        cbm.text = "Fun"
+        cbm.textAlignment = .center
+        cbm.textColor = UIColor.rgb(red: 0, green: 120, blue: 0, alpha: 0.8)
+        cbm.sizeToFit()
+        
+        return cbm
+        
+    }()
+    
+    
     override func setupViews() {
         super.setupViews()
+        
+        addSubview(calButtonMonth)
+        addConstraintsWithFormat(format: "H:|[v0]|", views: calButtonMonth)
+        addConstraintsWithFormat(format: "V:|[v0(30)]", views: calButtonMonth)
         
         addSubview(calButton)
         addConstraintsWithFormat(format: "H:|[v0]|", views: calButton)
         addConstraintsWithFormat(format: "V:[v0(10)]|", views: calButton)
+        
     }
     
     override var isHighlighted: Bool {
