@@ -19,7 +19,7 @@ class ActivityMonthCal: UIView {
         let calendarView: UIImageView = {
             let imageView = UIImageView()
             imageView.image = UIImage(named: "cal.jpg")?.withRenderingMode(.alwaysTemplate)
-            imageView.tintColor = UIColor.rgb(red: 0, green: 120, blue: 0, alpha: 0.8)
+            imageView.tintColor = Color.theme.withAlpha(0.8)
             imageView.contentMode = .scaleAspectFit
             imageView.clipsToBounds = true
             return imageView

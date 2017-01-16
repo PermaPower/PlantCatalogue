@@ -16,7 +16,7 @@ class PlantCell: BaseCell {
     // Activity Month Background View
     let activityMonthView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.rgb(red: 42, green: 83, blue: 31, alpha: 0.2)
+        view.backgroundColor = Color.darkText.withAlpha(0.2)
         return view
     }()
     
@@ -35,7 +35,7 @@ class PlantCell: BaseCell {
     // Seperator line
     let separatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.rgb(red: 42, green: 83, blue: 31, alpha: 0.2)
+        view.backgroundColor = Color.darkText.withAlpha(0.2)
         return view
     }()
     

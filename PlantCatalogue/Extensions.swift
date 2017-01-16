@@ -8,14 +8,6 @@
 
 import UIKit
 
-// Convenent colour
-extension UIColor {
-    static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) -> UIColor {
-        return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: alpha)
-    }
-}
-
-
 // Extension for addConstraintsWithFormat
 extension UIView {
     func addConstraintsWithFormat(format: String, views: UIView...){
@@ -33,3 +25,86 @@ extension UIView {
     }
 }
 
+
+// Extension to convert Hex to RGB with alpha
+extension Color {
+    
+     /*
+     Theme Colour:              Colours on Navigation Bar, Button Titles, Progress Indicator etc.
+     Border Colour:             Hair line separators in between views.
+     Shadow Colour:             Shadow colours for card like design.
+     Dark Background Colour:    Dark background colour to group UI components with light colour.
+     Light Background Colour:   Light background colour to group UI components with dark colour.
+     Intermediate Backgrd Col:  Used for grouping UI elements with some other colour scheme.
+     Dark Text Colour:
+     Light Text Colour:
+     Intermediate Text Colour:
+     Affirmation:               Colour to show success, something right for user.
+     Negation:                  Colour to show error, some danger zones for user.
+     */
+    
+    var value: UIColor {
+        var instanceColor = UIColor.clear
+        
+        switch self {
+        case .border:
+            instanceColor = UIColor(hexString: "#333333")
+        case .theme:
+            instanceColor = UIColor(hexString: "#307831")
+        case .shadow:
+            instanceColor = UIColor(hexString: "#ccccc")
+        case .darkBackground:
+            instanceColor = UIColor(hexString: "#307831")
+        case .lightBackground:
+            instanceColor = UIColor(hexString: "#3a9944")
+        case .intermidiateBackground:
+            instanceColor = UIColor(hexString: "#cccc99")
+        case .darkText:
+            instanceColor = UIColor(hexString: "#3a9944")
+        case .intermidiateText:
+            instanceColor = UIColor(hexString: "#999999")
+        case .lightText:
+            instanceColor = UIColor(hexString: "#cccccc")
+        case .affirmation:
+            instanceColor = UIColor(hexString: "#00ff66")
+        case .negation:
+            instanceColor = UIColor(hexString: "#ff3300")
+        case .custom(let hexValue, let opacity):
+            instanceColor = UIColor(hexString: hexValue).withAlphaComponent(CGFloat(opacity))
+        }
+        return instanceColor
+    }
+}
+
+extension UIColor {
+    /**
+     Creates an UIColor from HEX String in "#363636" format
+     
+     - parameter hexString: HEX String in "#363636" format
+     
+     - returns: UIColor from HexString
+     */
+    convenience init(hexString: String) {
+        
+        let hexString: String = (hexString as NSString).trimmingCharacters(in: .whitespacesAndNewlines)
+        let scanner          = Scanner(string: hexString as String)
+        
+        if hexString.hasPrefix("#") {
+            scanner.scanLocation = 1
+        }
+        
+        var color: UInt32 = 0
+        scanner.scanHexInt32(&color)
+        
+        let mask = 0x000000FF
+        let r = Int(color >> 16) & mask
+        let g = Int(color >> 8) & mask
+        let b = Int(color) & mask
+        
+        let red   = CGFloat(r) / 255.0
+        let green = CGFloat(g) / 255.0
+        let blue  = CGFloat(b) / 255.0
+        
+        self.init(red:red, green:green, blue:blue, alpha:1)
+    }
+}

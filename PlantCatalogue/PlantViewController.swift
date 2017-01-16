@@ -29,7 +29,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         // Set title bar color
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = UIColor.rgb(red: 48, green: 120, blue: 49, alpha: 1)
+        navigationController?.navigationBar.barTintColor = Color.theme.withAlpha(0.8)
         
          // Register collectionView cellID
         collectionView?.register(PlantCell.self, forCellWithReuseIdentifier: "cellID")
@@ -53,7 +53,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         
         // Create a view that is colored and hides the issue when scrolling
         let hideView = UIView()
-        hideView.backgroundColor = UIColor.rgb(red: 48, green: 120, blue: 49, alpha: 1)
+        hideView.backgroundColor = Color.theme.withAlpha(1.0)
         view.addSubview(hideView)
         view.addConstraintsWithFormat(format: "H:|[v0]|", views: hideView)
         view.addConstraintsWithFormat(format: "V:[v0(50)]", views: hideView)
@@ -78,7 +78,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         // Change background cell color with a alpha tint
-        view.backgroundColor = UIColor.rgb(red: 58, green: 153, blue: 68, alpha: 0.5)
+        view.backgroundColor = Color.lightBackground.withAlpha(0.5)
         // Setup the size of each collectionView cell
         return CGSize(width: view.frame.width, height: 200)
     
