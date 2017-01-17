@@ -1,17 +1,17 @@
 //
-//  ActivityMonth.swift
+//  SunSlider.swift
 //  PlantCatalogue
 //
-//  Created by Mac on 13/1/17.
+//  Created by Mac on 17/1/17.
 //  Copyright © 2017 Mac. All rights reserved.
 //
 
 import UIKit
 
-class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class SunButtonSelector: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    // Setup blank dictionary with a capacity of 0-11 (1-12 months) to track button presses
-    var calButtonTrack = [Int:Bool](minimumCapacity: 11)
+    // Setup blank dictionary with a capavary of 0-5 (Full shade..full sun) to track button presses
+    var calButtonTrack = [Int:Bool](minimumCapacity: 5)
     
     // Create a collectionVvar for the buttons with multiselect enabled
     lazy var collectionView: UICollectionView = {
@@ -22,36 +22,38 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         cv.dataSource = self
         cv.delegate = self
         cv.allowsMultipleSelection = true
-
+        
         return cv
     }()
     
-    let cellID = "cellID"
+    let sunCellID = "sunCellID"
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        collectionView.register(CalendarButton.self, forCellWithReuseIdentifier: cellID)
+        collectionView.register(SunButton.self, forCellWithReuseIdentifier: sunCellID)
         
         addSubview(collectionView)
         addConstraintsWithFormat(format: "H:|[v0]|", views: collectionView)
         addConstraintsWithFormat(format: "V:|[v0]|", views: collectionView)
         
-   }
+    }
     
-    // Month names
-    let months: [String] = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+    // Sun names
+    
+    var sunShade = ["sun.png","partialsun.png"]
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return sunShade.count
     }
     
     @available(iOS 6.0, *)
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! CalendarButton
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: sunCellID, for: indexPath) as! SunButton
         
         // As this function has been casted ast CalendarButton, I can access the UILabel
-        cell.calButtonMonth.text = months[indexPath.item]
-                
+        cell.sunButtonImage.image = UIImage(named: sunShade[indexPath.item])
+
+        
         return cell
     }
     
@@ -67,14 +69,14 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         print (calButtonTrack)
     }
     
-    // Divide the collectionview by 6 x 2
+    // Divide the collectionview by 5
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemsPerRow: CGFloat = 6
+        let itemsPerRow: CGFloat = 5
         let sectionInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
         let availableWidth = frame.width  - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
-        return CGSize(width: widthPerItem, height: (frame.height / 2) - 2.5)
+        return CGSize(width: widthPerItem, height: (frame.height) - 2.5)
     }
     
     // Reduce minimum line spacing between collectionview cells to zero
@@ -89,5 +91,3 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-

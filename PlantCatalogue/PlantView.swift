@@ -32,6 +32,12 @@ class PlantCell: BaseCell {
         return am
     }()
     
+    // Sun Slider
+    let sunSelector: SunButtonSelector = {
+        let sun = SunButtonSelector()
+        return sun
+    }()
+    
     // Seperator line
     let separatorView: UIView = {
         let view = UIView()
@@ -47,18 +53,22 @@ class PlantCell: BaseCell {
         addSubview(actMonthCal)
         addSubview(separatorView)
         addSubview(actMonth)
+        addSubview(sunSelector)
         
         // Horizontal constraints
         addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: activityMonthView)
         addConstraintsWithFormat(format: "H:|-28-[v0(50)]", views: actMonthCal)
         addConstraintsWithFormat(format: "H:|-[v0]-|", views: separatorView)
         addConstraintsWithFormat(format: "H:|-92-[v0]-32-|", views: actMonth)
+        addConstraintsWithFormat(format: "H:|-92-[v0]-32-|", views: sunSelector)
         
         // Vertical constraints
-        addConstraintsWithFormat(format: "V:|-16-[v0]-64-|", views: activityMonthView)
+        addConstraintsWithFormat(format: "V:|-16-[v0]-58-|", views: activityMonthView)
         addConstraintsWithFormat(format: "V:|-54-[v0(50)]", views: actMonthCal)
         addConstraintsWithFormat(format: "V:[v0(1)]|", views: separatorView)
-        addConstraintsWithFormat(format: "V:|-32-[v0(88)]", views: actMonth)
+        addConstraintsWithFormat(format: "V:|-32-[v0(85)]", views: actMonth)
+        addConstraintsWithFormat(format: "V:[v0(50)]-16-|", views: sunSelector)
+
     }
     
    

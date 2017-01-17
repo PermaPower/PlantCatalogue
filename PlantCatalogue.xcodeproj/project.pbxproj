@@ -13,9 +13,11 @@
 		0416DDE81E26F1EA000BDA76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0416DDE71E26F1EA000BDA76 /* Assets.xcassets */; };
 		0416DDEB1E26F1EA000BDA76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0416DDE91E26F1EA000BDA76 /* LaunchScreen.storyboard */; };
 		046A7D9E1E28796D00435314 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A7D9D1E28796D00435314 /* MenuBar.swift */; };
+		046FC9F51E2DC8A8000F235B /* SunButtonSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046FC9F41E2DC8A8000F235B /* SunButtonSelector.swift */; };
 		048BB9D41E274F70008A4F78 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BB9D31E274F70008A4F78 /* Extensions.swift */; };
 		04A4DE9B1E29EA1800A2FBAC /* CalendarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4DE9A1E29EA1800A2FBAC /* CalendarButton.swift */; };
 		04A4DE9D1E2AE05300A2FBAC /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4DE9C1E2AE05300A2FBAC /* BaseCell.swift */; };
+		04ADA5E51E2E2E8B000C74FA /* SunButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADA5E41E2E2E8B000C74FA /* SunButton.swift */; };
 		04C773BE1E2D780600D5F62C /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C773BD1E2D780600D5F62C /* ColorScheme.swift */; };
 		04F72D2C1E283EBD00600CCC /* PlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F72D2B1E283EBD00600CCC /* PlantView.swift */; };
 		04F72D2F1E284A9C00600CCC /* ActivityMonthCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F72D2E1E284A9C00600CCC /* ActivityMonthCollectionView.swift */; };
@@ -31,9 +33,11 @@
 		0416DDEA1E26F1EA000BDA76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0416DDEC1E26F1EA000BDA76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		046A7D9D1E28796D00435314 /* MenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		046FC9F41E2DC8A8000F235B /* SunButtonSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunButtonSelector.swift; sourceTree = "<group>"; };
 		048BB9D31E274F70008A4F78 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		04A4DE9A1E29EA1800A2FBAC /* CalendarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarButton.swift; sourceTree = "<group>"; };
 		04A4DE9C1E2AE05300A2FBAC /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		04ADA5E41E2E2E8B000C74FA /* SunButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunButton.swift; sourceTree = "<group>"; };
 		04C773BD1E2D780600D5F62C /* ColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		04F72D2B1E283EBD00600CCC /* PlantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantView.swift; sourceTree = "<group>"; };
 		04F72D2E1E284A9C00600CCC /* ActivityMonthCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityMonthCollectionView.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 				04F72D2B1E283EBD00600CCC /* PlantView.swift */,
 				046A7D9D1E28796D00435314 /* MenuBar.swift */,
 				04F72D301E2856D800600CCC /* ActivityMonth */,
+				046FC9F41E2DC8A8000F235B /* SunButtonSelector.swift */,
+				04ADA5E41E2E2E8B000C74FA /* SunButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -192,9 +198,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046FC9F51E2DC8A8000F235B /* SunButtonSelector.swift in Sources */,
 				04F72D2C1E283EBD00600CCC /* PlantView.swift in Sources */,
 				0416DDE31E26F1EA000BDA76 /* PlantViewController.swift in Sources */,
 				048BB9D41E274F70008A4F78 /* Extensions.swift in Sources */,
+				04ADA5E51E2E2E8B000C74FA /* SunButton.swift in Sources */,
 				04F72D321E2858B400600CCC /* CalendarIcon.swift in Sources */,
 				04A4DE9D1E2AE05300A2FBAC /* BaseCell.swift in Sources */,
 				04F72D2F1E284A9C00600CCC /* ActivityMonthCollectionView.swift in Sources */,
