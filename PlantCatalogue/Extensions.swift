@@ -70,7 +70,7 @@ extension Color {
         case .affirmation:
             instanceColor = UIColor(hexString: "#E8F5E9")
         case .negation:
-            instanceColor = UIColor(hexString: "#000000")
+            instanceColor = UIColor(hexString: "#1B5E20")
         case .custom(let hexValue, let opacity):
             instanceColor = UIColor(hexString: hexValue).withAlphaComponent(CGFloat(opacity))
         }
