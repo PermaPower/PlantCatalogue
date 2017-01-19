@@ -16,8 +16,21 @@ class PlantCell: BaseCell {
     // Activity Month Background View
     let activityMonthView: UIView = {
         let view = UIView()
-        view.backgroundColor = Color.darkText.withAlpha(0.2)
+        view.backgroundColor = Color.darkBackground.withAlpha(0.2)
         return view
+    }()
+    
+    // Sun Background View
+    let sunMonthView: UIView = {
+        let view = UIView()
+        view.backgroundColor = Color.darkBackground.withAlpha(0.2)
+        return view
+    }()
+    
+    // Sun icon View
+    let sunIconView: WeatherIcon = {
+        let sunIcon = WeatherIcon()
+        return sunIcon
     }()
     
     // Activity Month Calendar View
@@ -50,24 +63,35 @@ class PlantCell: BaseCell {
         
         // Add subviews
         addSubview(activityMonthView)
+        addSubview(sunMonthView)
         addSubview(actMonthCal)
+        addSubview(sunIconView)
         addSubview(separatorView)
         addSubview(actMonth)
         addSubview(sunSelector)
+
         
         // Horizontal constraints
         addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: activityMonthView)
         addConstraintsWithFormat(format: "H:|-28-[v0(50)]", views: actMonthCal)
-        addConstraintsWithFormat(format: "H:|-[v0]-|", views: separatorView)
         addConstraintsWithFormat(format: "H:|-92-[v0]-32-|", views: actMonth)
+        
+        addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: sunMonthView)
         addConstraintsWithFormat(format: "H:|-92-[v0]-32-|", views: sunSelector)
+        addConstraintsWithFormat(format: "H:|-28-[v0(50)]", views: sunIconView)
+        
+        addConstraintsWithFormat(format: "H:|-[v0]-|", views: separatorView)
         
         // Vertical constraints
-        addConstraintsWithFormat(format: "V:|-16-[v0]-58-|", views: activityMonthView)
+        addConstraintsWithFormat(format: "V:|-16-[v0(130)]", views: activityMonthView)
         addConstraintsWithFormat(format: "V:|-54-[v0(50)]", views: actMonthCal)
-        addConstraintsWithFormat(format: "V:[v0(1)]|", views: separatorView)
         addConstraintsWithFormat(format: "V:|-32-[v0(85)]", views: actMonth)
-        addConstraintsWithFormat(format: "V:[v0(50)]-16-|", views: sunSelector)
+        
+        addConstraintsWithFormat(format: "V:|-150-[v0(80)]", views: sunMonthView)
+        addConstraintsWithFormat(format: "V:|-165-[v0(50)]", views: sunSelector)
+        addConstraintsWithFormat(format: "V:|-165-[v0(50)]", views: sunIconView)
+        
+        addConstraintsWithFormat(format: "V:[v0(1)]|", views: separatorView)
 
     }
     

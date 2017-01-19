@@ -11,7 +11,7 @@ import UIKit
 class SunButtonSelector: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     // Setup blank dictionary with a capavary of 0-5 (Full shade..full sun) to track button presses
-    var calButtonTrack = [Int:Bool](minimumCapacity: 5)
+    var calButtonTrack = [Int:Bool](minimumCapacity: 3)
     
     // Create a collectionVvar for the buttons with multiselect enabled
     lazy var collectionView: UICollectionView = {
@@ -40,7 +40,7 @@ class SunButtonSelector: UIView, UICollectionViewDataSource, UICollectionViewDel
     
     // Sun names
     
-    var sunShade = ["sun.png","partialsun.png"]
+    var sunShade = ["sun.png","partialsun.png","partialshade.png"]
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return sunShade.count
@@ -51,8 +51,8 @@ class SunButtonSelector: UIView, UICollectionViewDataSource, UICollectionViewDel
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: sunCellID, for: indexPath) as! SunButton
         
         // As this function has been casted ast CalendarButton, I can access the UILabel
-        cell.sunButtonImage.image = UIImage(named: sunShade[indexPath.item])
-
+        cell.sunButtonImage.image = UIImage(named: sunShade[indexPath.item])?.withRenderingMode(.alwaysTemplate)
+        cell.sunButtonImage.tintColor = Color.affirmation.withAlpha(1.0)
         
         return cell
     }
@@ -71,7 +71,7 @@ class SunButtonSelector: UIView, UICollectionViewDataSource, UICollectionViewDel
     
     // Divide the collectionview by 5
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemsPerRow: CGFloat = 5
+        let itemsPerRow: CGFloat = 3
         let sectionInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
         let availableWidth = frame.width  - paddingSpace

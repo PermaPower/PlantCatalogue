@@ -40,19 +40,19 @@ class SunButton: BaseCell {
     
     override var isHighlighted: Bool {
         didSet {
-            sunButtonImage.backgroundColor = isHighlighted ? UIColor.red: UIColor.clear
+            sunButtonImage.tintColor = isHighlighted ? Color.negation.value : Color.affirmation.value
         }
     }
     
     override var isSelected: Bool {
         didSet {
-            sunButtonImage.backgroundColor = isSelected ? UIColor.red: UIColor.clear
+            sunButtonImage.tintColor = isSelected ? Color.negation.value : Color.affirmation.value
         }
     }
     
     override var isMultipleTouchEnabled: Bool {
         didSet {
-            sunButtonImage.backgroundColor = isMultipleTouchEnabled ? UIColor.red: UIColor.clear
+            sunButtonImage.tintColor = isMultipleTouchEnabled ? Color.negation.value : Color.affirmation.value
         }
     }
 }

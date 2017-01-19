@@ -41,6 +41,8 @@ extension Color {
      Intermediate Text Colour:
      Affirmation:               Colour to show success, something right for user.
      Negation:                  Colour to show error, some danger zones for user.
+     
+     https://material.io/guidelines/style/color.html#color-color-palette
      */
     
     var value: UIColor {
@@ -50,25 +52,25 @@ extension Color {
         case .border:
             instanceColor = UIColor(hexString: "#333333")
         case .theme:
-            instanceColor = UIColor(hexString: "#307831")
+            instanceColor = UIColor(hexString: "#388E3C")
         case .shadow:
             instanceColor = UIColor(hexString: "#ccccc")
         case .darkBackground:
-            instanceColor = UIColor(hexString: "#307831")
+            instanceColor = UIColor(hexString: "#2E7D32")
         case .lightBackground:
-            instanceColor = UIColor(hexString: "#3a9944")
+            instanceColor = UIColor(hexString: "#1B5E20")
         case .intermidiateBackground:
             instanceColor = UIColor(hexString: "#cccc99")
         case .darkText:
-            instanceColor = UIColor(hexString: "#3a9944")
+            instanceColor = UIColor(hexString: "#64706c")
         case .intermidiateText:
             instanceColor = UIColor(hexString: "#999999")
         case .lightText:
-            instanceColor = UIColor(hexString: "#cccccc")
+            instanceColor = UIColor(hexString: "#FFFFFF")
         case .affirmation:
-            instanceColor = UIColor(hexString: "#00ff66")
+            instanceColor = UIColor(hexString: "#B9F6CA")
         case .negation:
-            instanceColor = UIColor(hexString: "#ff3300")
+            instanceColor = UIColor(hexString: "#FFEB3B")
         case .custom(let hexValue, let opacity):
             instanceColor = UIColor(hexString: hexValue).withAlphaComponent(CGFloat(opacity))
         }

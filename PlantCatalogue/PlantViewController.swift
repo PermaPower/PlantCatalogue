@@ -15,10 +15,11 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         
         // Set background image at layer 0
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-       backgroundImage.image = UIImage(named: "greenbackground.jpg")
-       backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
-       backgroundImage.clipsToBounds = true
-       view.insertSubview(backgroundImage, at: 0)
+        backgroundImage.image = UIImage(named: "greenbackground.jpg")
+        backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
+        backgroundImage.clipsToBounds = true
+        //  backgroundImage.backgroundColor = Color.custom(hexString: "#66BB6A", alpha: 1.0).value
+        view.insertSubview(backgroundImage, at: 0)
         
         // Set title of navigation bar title
         navigationItem.title = "Home"
@@ -78,9 +79,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         // Change background cell color with a alpha tint
-        view.backgroundColor = Color.lightBackground.withAlpha(0.5)
+        view.backgroundColor = UIColor.clear
         // Setup the size of each collectionView cell
-        return CGSize(width: view.frame.width, height: 200)
+        return CGSize(width: view.frame.width, height: 500)
     
     }
     
