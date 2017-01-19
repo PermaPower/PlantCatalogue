@@ -68,9 +68,9 @@ extension Color {
         case .lightText:
             instanceColor = UIColor(hexString: "#FFFFFF")
         case .affirmation:
-            instanceColor = UIColor(hexString: "#B9F6CA")
+            instanceColor = UIColor(hexString: "#E8F5E9")
         case .negation:
-            instanceColor = UIColor(hexString: "#FFEB3B")
+            instanceColor = UIColor(hexString: "#000000")
         case .custom(let hexValue, let opacity):
             instanceColor = UIColor(hexString: hexValue).withAlphaComponent(CGFloat(opacity))
         }

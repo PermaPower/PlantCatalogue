@@ -22,7 +22,12 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         view.insertSubview(backgroundImage, at: 0)
         
         // Set title of navigation bar title
-        navigationItem.title = "Home"
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
+        titleLabel.text = "Plant Details"
+        titleLabel.textColor = Color.lightText.value
+        titleLabel.font = UIFont.systemFont(ofSize: 20.0)
+        navigationItem.titleView = titleLabel
+        
         
         // Setup menu bar
         setupMenuBar()
