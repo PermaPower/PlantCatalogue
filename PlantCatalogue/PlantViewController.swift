@@ -17,16 +17,16 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         
         // Set background image at layer 0
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "greenbackground.jpg")
+		//backgroundImage.image = UIImage(named: "greenbackground.jpg")
         backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
         backgroundImage.clipsToBounds = true
-        //  backgroundImage.backgroundColor = Color.custom(hexString: "#66BB6A", alpha: 1.0).value
+		backgroundImage.backgroundColor = Color.custom(hexString: "#E0F7FA", alpha: 1.0).value
         view.insertSubview(backgroundImage, at: 0)
         
         // Set title of navigation bar title
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
         titleLabel.text = "Plant Details"
-        titleLabel.textColor = Color.lightText.value
+        titleLabel.textColor = Color.theme.value
         titleLabel.font = UIFont.systemFont(ofSize: 20.0)
         navigationItem.titleView = titleLabel
         

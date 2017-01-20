@@ -16,7 +16,7 @@ class WeatherIcon: UIView {
         let weatherView: UIImageView = {
             let imageView = UIImageView()
             imageView.image = UIImage(named: "umbrella.png")?.withRenderingMode(.alwaysTemplate)
-            imageView.tintColor = Color.lightBackground.withAlpha(0.8)
+            imageView.tintColor = Color.theme.withAlpha(0.8)
             imageView.contentMode = .scaleAspectFit
             imageView.clipsToBounds = true
             return imageView

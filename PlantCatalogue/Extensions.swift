@@ -51,27 +51,32 @@ extension Color {
         switch self {
         case .border:
             instanceColor = UIColor(hexString: "#333333")
+			
         case .theme:
-            instanceColor = UIColor(hexString: "#388E3C")
+            instanceColor = UIColor(hexString: "#0097A7")
         case .shadow:
             instanceColor = UIColor(hexString: "#ccccc")
+			
         case .darkBackground:
-            instanceColor = UIColor(hexString: "#2E7D32")
+            instanceColor = UIColor(hexString: "#000000")
         case .lightBackground:
             instanceColor = UIColor(hexString: "#1B5E20")
-        case .intermidiateBackground:
+		case .intermidiateBackground:
             instanceColor = UIColor(hexString: "#cccc99")
-        case .darkText:
+			
+		case .darkText:
             instanceColor = UIColor(hexString: "#64706c")
         case .intermidiateText:
             instanceColor = UIColor(hexString: "#999999")
         case .lightText:
             instanceColor = UIColor(hexString: "#FFFFFF")
-        case .affirmation:
+			
+		case .affirmation:
             instanceColor = UIColor(hexString: "#E8F5E9")
         case .negation:
             instanceColor = UIColor(hexString: "#1B5E20")
-        case .custom(let hexValue, let opacity):
+			
+		case .custom(let hexValue, let opacity):
             instanceColor = UIColor(hexString: hexValue).withAlphaComponent(CGFloat(opacity))
         }
         return instanceColor
