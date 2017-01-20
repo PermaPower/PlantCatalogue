@@ -88,7 +88,7 @@ class PlantCell: BaseCell {
         addConstraintsWithFormat(format: "H:|-92-[v0]-32-|", views: sunSelector)
         addConstraintsWithFormat(format: "H:|-28-[v0(50)]", views: sunIconView)
         
-        addConstraintsWithFormat(format: "H:|-[v0]-|", views: habitPicker)
+        addConstraintsWithFormat(format: "H:|-16-[v0]", views: habitPicker)
                
         addConstraintsWithFormat(format: "H:|-[v0]-|", views: separatorView)
         
@@ -101,7 +101,7 @@ class PlantCell: BaseCell {
         addConstraintsWithFormat(format: "V:|-165-[v0(50)]", views: sunSelector)
         addConstraintsWithFormat(format: "V:|-165-[v0(50)]", views: sunIconView)
         
-        addConstraintsWithFormat(format: "V:|-250-[v0(50)]", views: habitPicker)
+        addConstraintsWithFormat(format: "V:|-250-[v0(100)]", views: habitPicker)
         
         addConstraintsWithFormat(format: "V:[v0(1)]|", views: separatorView)
         

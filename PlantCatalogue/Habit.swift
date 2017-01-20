@@ -10,7 +10,13 @@ import UIKit
 
 class HabitViewCollection: UIControl, UIPickerViewDataSource, UIPickerViewDelegate {
    
-    var pickerDataSource = ["White", "Red", "Green", "Blue"];
+    var pickerDataSource = ["White", "Red", "Green", "Blue"]
+    var pickerDataSourceImage : [UIImage] = [
+        UIImage(named: "sun.png")!,
+        UIImage(named: "sun.png")!,
+        UIImage(named: "sun.png")!,
+        UIImage(named: "sun.png")!
+    ]
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,11 +31,10 @@ class HabitViewCollection: UIControl, UIPickerViewDataSource, UIPickerViewDelega
         
         addSubview(pickerView)
         addConstraintsWithFormat(format: "H:|-[v0]-|", views: pickerView)
-        addConstraintsWithFormat(format: "V:|-[v0(50)]", views: pickerView)
-        
-
-        //backgroundColor = tintColor
+        addConstraintsWithFormat(format: "V:|-[v0]-|", views: pickerView)
     }
+    
+    // Mark: - PickerViewDataSource functions
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -39,9 +44,32 @@ class HabitViewCollection: UIControl, UIPickerViewDataSource, UIPickerViewDelega
         return pickerDataSource.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerDataSource[row]
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        // Change the row height of the UIPicker
+        return 50
     }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
+        
+        // Can adjust position of image within the UIPicker here
+        let imageView = UIImageView(frame: CGRect(x: frame.width / 2 - 75 , y: 30, width: 40, height: 40))
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.image = pickerDataSourceImage[row]
+        
+        // Can adjust the position of the text within the UIPicker here
+        let labelView = UILabel(frame: CGRect(x: 150, y: 5, width: frame.width / 2 + 50, height: frame.height))
+        labelView.text = pickerDataSource[row]
+        
+        view.addSubview(imageView)
+        view.addSubview(labelView)
+        
+        return view
+    }
+    
+    // Mark: - PickerViewDelege functions
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let selectedItemName = pickerDataSource[row]
