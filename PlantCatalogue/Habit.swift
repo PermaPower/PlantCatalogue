@@ -43,6 +43,10 @@ class HabitViewCollection: UIControl, UIPickerViewDataSource, UIPickerViewDelega
         return pickerDataSource[row]
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let selectedItemName = pickerDataSource[row]
+        print(selectedItemName)
+    }
     
     public required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
