@@ -9,7 +9,9 @@
 import UIKit
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-
+    
+    @IBOutlet weak var picker: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,7 +29,6 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         titleLabel.textColor = Color.lightText.value
         titleLabel.font = UIFont.systemFont(ofSize: 20.0)
         navigationItem.titleView = titleLabel
-        
         
         // Setup menu bar
         setupMenuBar()
@@ -112,3 +113,5 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
 
 }
+
+

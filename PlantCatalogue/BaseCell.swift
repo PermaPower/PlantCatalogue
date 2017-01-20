@@ -9,7 +9,7 @@
 import UIKit
 
 // Superclass to initalise all base UICollectionView cells
-class BaseCell: UICollectionViewCell  {
+class BaseCell: UICollectionViewCell {
     override init(frame: CGRect) {
         // When dequeueReusableCell is called this init method is called if it needs a new cell
         super.init(frame: frame)

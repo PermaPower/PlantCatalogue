@@ -51,6 +51,13 @@ class PlantCell: BaseCell {
         return sun
     }()
     
+    // UIpicker for habit
+    let habitPicker: HabitViewCollection = {
+        
+        let habit = HabitViewCollection()
+        return habit
+    }()
+    
     // Seperator line
     let separatorView: UIView = {
         let view = UIView()
@@ -69,6 +76,7 @@ class PlantCell: BaseCell {
         addSubview(separatorView)
         addSubview(actMonth)
         addSubview(sunSelector)
+        addSubview(habitPicker)
 
         
         // Horizontal constraints
@@ -80,6 +88,8 @@ class PlantCell: BaseCell {
         addConstraintsWithFormat(format: "H:|-92-[v0]-32-|", views: sunSelector)
         addConstraintsWithFormat(format: "H:|-28-[v0(50)]", views: sunIconView)
         
+        addConstraintsWithFormat(format: "H:|-[v0]-|", views: habitPicker)
+               
         addConstraintsWithFormat(format: "H:|-[v0]-|", views: separatorView)
         
         // Vertical constraints
@@ -91,7 +101,10 @@ class PlantCell: BaseCell {
         addConstraintsWithFormat(format: "V:|-165-[v0(50)]", views: sunSelector)
         addConstraintsWithFormat(format: "V:|-165-[v0(50)]", views: sunIconView)
         
+        addConstraintsWithFormat(format: "V:|-250-[v0(50)]", views: habitPicker)
+        
         addConstraintsWithFormat(format: "V:[v0(1)]|", views: separatorView)
+        
 
     }
     
