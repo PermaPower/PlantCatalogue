@@ -16,7 +16,7 @@ class CalendarButton: BaseCell {
         
         let cb = UIView()
         
-        cb.layer.borderColor = Color.affirmation.withAlpha(0.9).cgColor
+        cb.layer.borderColor = Color.theme.withAlpha(0.8).cgColor
         cb.layer.borderWidth = 2.0
         cb.layer.cornerRadius = 5
         cb.layer.masksToBounds = true
@@ -30,7 +30,7 @@ class CalendarButton: BaseCell {
         let cbm = UILabel()
         
         cbm.textAlignment = .center
-        cbm.textColor = Color.lightBackground.withAlpha(0.8)
+        cbm.textColor = Color.theme.withAlpha(0.8)
         cbm.sizeToFit()
         
         return cbm

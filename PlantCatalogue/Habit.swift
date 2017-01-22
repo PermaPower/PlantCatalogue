@@ -46,7 +46,7 @@ class HabitViewCollection: UIControl, UIPickerViewDataSource, UIPickerViewDelega
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         // Change the row height of the UIPicker
-        return 50
+        return 35
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -54,7 +54,8 @@ class HabitViewCollection: UIControl, UIPickerViewDataSource, UIPickerViewDelega
         let view = UIView(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
         
         // Can adjust position of image within the UIPicker here
-        let imageView = UIImageView(frame: CGRect(x: frame.width / 2 - 75 , y: 30, width: 40, height: 40))
+        let imageView = UIImageView()
+		imageView.frame = CGRect(x: frame.width / 2 - 75 , y: 32, width: 40, height: 40)
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.image = pickerDataSourceImage[row]
@@ -72,6 +73,7 @@ class HabitViewCollection: UIControl, UIPickerViewDataSource, UIPickerViewDelega
         
         return view
     }
+	
     
     // Mark: - PickerViewDelege functions
     

@@ -50,10 +50,9 @@ class SunButtonSelector: UIView, UICollectionViewDataSource, UICollectionViewDel
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: sunCellID, for: indexPath) as! SunButton
         
-        // As this function has been casted ast CalendarButton, I can access the UILabel
+        // As this function has been casted as CalendarButton, I can access the UILabel
         cell.sunButtonImage.image = UIImage(named: sunShade[indexPath.item])?.withRenderingMode(.alwaysTemplate)
-        cell.sunButtonImage.tintColor = Color.affirmation.withAlpha(1.0)
-        
+        cell.sunButtonImage.tintColor = Color.theme.value
         return cell
     }
     

@@ -16,14 +16,14 @@ class PlantCell: BaseCell {
     // Activity Month Background View
     let activityMonthView: UIView = {
         let view = UIView()
-        view.backgroundColor = Color.darkBackground.withAlpha(0.2)
+        view.backgroundColor = Color.theme.withAlpha(0.2)
         return view
     }()
     
     // Sun Background View
     let sunMonthView: UIView = {
         let view = UIView()
-        view.backgroundColor = Color.darkBackground.withAlpha(0.2)
+        view.backgroundColor = Color.theme.withAlpha(0.2)
         return view
     }()
     
@@ -61,7 +61,7 @@ class PlantCell: BaseCell {
     // Seperator line
     let separatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = Color.darkText.withAlpha(0.2)
+        view.backgroundColor = Color.theme.withAlpha(0.2)
         return view
     }()
     
