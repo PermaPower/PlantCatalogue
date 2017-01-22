@@ -15,20 +15,15 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set background image at layer 0
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "greenbackground.jpg")
-        backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
-        backgroundImage.clipsToBounds = true
-        //  backgroundImage.backgroundColor = Color.custom(hexString: "#66BB6A", alpha: 1.0).value
-        view.insertSubview(backgroundImage, at: 0)
-        
         // Set title of navigation bar title
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
         titleLabel.text = "Plant Details"
         titleLabel.textColor = Color.lightText.value
         titleLabel.font = UIFont.systemFont(ofSize: 20.0)
         navigationItem.titleView = titleLabel
+        
+        // Add background image (Extenstion)
+        self.view.addBackground()
         
         // Setup menu bar
         setupMenuBar()
@@ -47,6 +42,10 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         // Push collection View down 50 pixels (size of menuBar)
         collectionView?.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
         collectionView?.scrollIndicatorInsets = UIEdgeInsetsMake(50, 0, 0, 0)
+        
+        
+        
+        
     }
     
     let menuBar: MenuBar = {
@@ -88,8 +87,10 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         view.backgroundColor = UIColor.clear
         // Setup the size of each collectionView cell
         return CGSize(width: view.frame.width, height: 500)
-    
+        
     }
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
@@ -105,13 +106,13 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         return cell
     }
     
-
-    override func didReceiveMemoryWarning() {
+    
+   override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
-}
+    
+    
+ }
 
 

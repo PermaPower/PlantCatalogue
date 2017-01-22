@@ -57,7 +57,7 @@ class PlantCell: BaseCell {
         let habit = HabitViewCollection()
         return habit
     }()
-    
+
     // Seperator line
     let separatorView: UIView = {
         let view = UIView()
@@ -77,7 +77,6 @@ class PlantCell: BaseCell {
         addSubview(actMonth)
         addSubview(sunSelector)
         addSubview(habitPicker)
-
         
         // Horizontal constraints
         addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: activityMonthView)

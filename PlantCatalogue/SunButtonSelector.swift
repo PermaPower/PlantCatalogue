@@ -72,7 +72,7 @@ class SunButtonSelector: UIView, UICollectionViewDataSource, UICollectionViewDel
     // Divide the collectionview by 5
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemsPerRow: CGFloat = 3
-        let sectionInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        let sectionInsets = UIEdgeInsets(top: 5, left: 15, bottom: 5, right: 15)
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
         let availableWidth = frame.width  - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow

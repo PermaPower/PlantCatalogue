@@ -58,9 +58,13 @@ class HabitViewCollection: UIControl, UIPickerViewDataSource, UIPickerViewDelega
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.image = pickerDataSourceImage[row]
+        imageView.image?.withRenderingMode(.alwaysTemplate)
+        imageView.tintColor = Color.lightBackground.withAlpha(0.8)
+        
         
         // Can adjust the position of the text within the UIPicker here
         let labelView = UILabel(frame: CGRect(x: 150, y: 5, width: frame.width / 2 + 50, height: frame.height))
+        labelView.textColor = Color.theme.value
         labelView.text = pickerDataSource[row]
         
         view.addSubview(imageView)
