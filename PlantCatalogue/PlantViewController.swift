@@ -22,9 +22,6 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         titleLabel.font = UIFont.systemFont(ofSize: 20.0)
         navigationItem.titleView = titleLabel
         
-        // Add background image (Extenstion)
-        self.view.addBackground()
-        
         // Setup menu bar
         setupMenuBar()
         
@@ -48,10 +45,30 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         
     }
     
+    var imageView: UIImageView!
+    
     let menuBar: MenuBar = {
         let mb = MenuBar()
         return mb
     }()
+    
+    
+    override func loadView() {
+        super.loadView()
+        
+        let image = UIImage(named: "greenbackground.jpg")!
+        self.imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        self.imageView.contentMode = .scaleAspectFill
+        self.imageView.image = image
+        
+        self.view.insertSubview(imageView, at: 0)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        self.imageView.frame = self.view.bounds
+    }
     
     private func setupMenuBar() {
         // Hide menubar upon scroll
